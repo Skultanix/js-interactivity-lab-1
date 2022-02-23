@@ -15,6 +15,8 @@ function addMovie(event) {
     const movieTitle = document.createElement(`span`)
     //what is typed into the inputField is stored as a movie title
     movieTitle.textContent = inputField.value
+    //crossOffMovie event
+    movieTitle.addEventListener("click", crossOffMovie)
     //appending movieTitle to movie list
     movie.appendChild(movieTitle)
     //adding the delete button
@@ -34,6 +36,11 @@ function addMovie(event) {
 function deleteMovie(event) {
     event.target.parentNode.remove()
 }
+//cross off function
+function crossOffMovie (event) {
+    event.target.classList.toggle("checked")
+}
+
 //selection of form element
 const form = document.querySelector(`form`)
 //event data
