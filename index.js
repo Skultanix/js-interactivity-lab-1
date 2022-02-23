@@ -1,6 +1,9 @@
 //js test
 console.log("Hello world.")
 
+//assigning message variable
+const message = document.querySelector("#message")
+
 //adding movies
 
 //addMovie function
@@ -35,10 +38,17 @@ function addMovie(event) {
 //delete function
 function deleteMovie(event) {
     event.target.parentNode.remove()
+    //deletion message
+    message.textContent = `The film has been deleted.`
 }
 //cross off function
 function crossOffMovie (event) {
     event.target.classList.toggle("checked")
+    if(event.target.classList.contains("checked")) {
+        message.textContent = `The film has been watched.`
+    } else {
+        message.textContent = `The film has been re-added to the list.`
+    }
 }
 
 //selection of form element
