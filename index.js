@@ -39,16 +39,19 @@ function addMovie(event) {
 function deleteMovie(event) {
     event.target.parentNode.remove()
     //deletion message
-    message.textContent = `The film has been deleted.`
+    //message.textContent = `The film has been deleted.`
+    message.textContent = `The film ${event.target.parentNode.firstChild.textContent} has been removed.`
     revealMessage()
 }
 //cross off function
 function crossOffMovie (event) {
     event.target.classList.toggle("checked")
     if(event.target.classList.contains("checked")) {
-        message.textContent = `The film has been watched.`
+        //message.textContent = `The film has been watched.`
+        message.textContent = `The film ${event.target.textContent} has been viewed.`
     } else {
-        message.textContent = `The film has been re-added to the list.`
+        //message.textContent = `The film has been re-added to the list.`
+        message.textContent = `The film ${event.target.textContent} has been readmitted.`
     }
     revealMessage()
 }
