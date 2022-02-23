@@ -40,6 +40,7 @@ function deleteMovie(event) {
     event.target.parentNode.remove()
     //deletion message
     message.textContent = `The film has been deleted.`
+    revealMessage()
 }
 //cross off function
 function crossOffMovie (event) {
@@ -49,8 +50,16 @@ function crossOffMovie (event) {
     } else {
         message.textContent = `The film has been re-added to the list.`
     }
+    revealMessage()
 }
-
+//reveal message function
+function revealMessage() {
+    message.classList.remove(`hide`)
+    
+    setTimeout(() => {
+        message.classList.add(`hide`)
+    }, 1000)
+}
 //selection of form element
 const form = document.querySelector(`form`)
 //event data
